@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230116233019">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230117215358">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +15,16 @@
 <body>
 	<div class="wrapper">
 		<header class="header">
+
+
+
 			<div class="header__container">
 				<div class="header__top">
 					<div class="header__top-content">
 						<div class="header__top-block-logo">
 							<a class="header__logo" href="#">
 								<img class="header__img-top" src="img/header/logo.svg" alt="logo">
-								<p class="header__logo-text">GRILLA <br>
+								<p class="header__logo-text non-mb">GRILLA <br>
 									<span>HOUSE PUB </span>
 								</p>
 							</a>
@@ -32,7 +35,7 @@
 								<span class="icon-theme _icon-sun"></span>
 							</button>
 						</div>
-						<div class="header__block-select">
+						<div data-da=".top-menu__body , 1100" class="header__block-select">
 							<select name="form[]" class="header__select select-city _icon-arrow-select">
 								<option value="1" selected>Кропивницкий</option>
 								<option value="2">Киев</option>
@@ -52,54 +55,70 @@
 						</div>
 					</div>
 					<nav class="header__top-nav nav-page">
-						<ul class="nav-page__list">
+						<ul data-da=".top-menu__body , 1280" class="nav-page__list">
 							<li class="nav-page__item"><a href="#" class="nav-page__link">Доставка</a></li>
 							<li class="nav-page__item"><a href="#" class="nav-page__link">Про нас</a></li>
 						</ul>
-						<a href="#" class="button-user _icon-user">Вхiд</a>
+						<a data-da=".top-menu__body , 850" href="#" class="button-user _icon-user">Вхiд</a>
 					</nav>
+					<div class="header__top-menu top-menu">
+						<button type="button" class="top-menu__button"><span></span></button>
+
+						<!-- мобюльное меню куда перемещаются элементы на адаптиве -->
+						<div class="top-menu__body">
+							<a class="header__logo logo-menu" href="#">
+								<img class="header__img-top" src="img/header/logo.svg" alt="logo">
+								<p class="header__logo-text">GRILLA <br>
+									<span>HOUSE PUB </span>
+								</p>
+							</a>
+						</div>
+					</div>
 				</div>
 				<div class="header__body">
-					<div class="header__block-logo">
-						<a class="header__logo" href="home.html">
-							<img class="header__img" src="img/header/logo.svg" alt="logo">
-						</a>
-					</div>
-					<div class="header__menu menu">
-						<button type="button" class="menu__button"><span></span></button>
-						<nav class="menu__body">
-							<ul class="menu__list">
-								<li class="menu__item"><a href="#" class="menu__link link-active">Піцци</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Бургери</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Фрітюр</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Крила</a></li>
-								<li class="menu__item"><a href="#" class="menu__link ">Пиво</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Напої</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Категорія</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Категорія</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Категорія</a></li>
-								<li class="menu__item"><a href="#" class="menu__link">Категорія</a></li>
-							</ul>
+					<div class="header__body-wrap">
+						<div class="header__block-logo">
+							<a class="header__logo" href="home.html">
+								<img class="header__img" src="img/header/logo.svg" alt="logo">
+							</a>
+						</div>
+						<div class="header__menu menu">
 
-							<ul class="interaction__list">
-								<li class="interaction__item">
-									<a class="interaction__link-reservation" href="#">Бронювати стіл</a>
-								</li>
-								<li class="interaction__item">
-									<a href="#" class="interaction__link _icon-heard">
-										<span class="interaction-count">3</span>
-									</a>
-								</li>
-								<li class="interaction__item">
-									<a href="#" class="interaction__link _icon-basket">
-										<span class="interaction-count">5</span>
-									</a>
-								</li>
-							</ul>
-						</nav>
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item"><a href="#" class="menu__link link-active">Піцци</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Бургери</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Фрітюр</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Крила</a></li>
+									<li class="menu__item"><a href="#" class="menu__link ">Пиво</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Напої</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Категорія</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Категорія</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Категорія</a></li>
+									<li class="menu__item"><a href="#" class="menu__link">Категорія</a></li>
+								</ul>
+
+								<ul class="interaction__list">
+									<li class="interaction__item">
+										<a data-da=".top-menu__body, 1180" class="interaction__link-reservation" href="#">Бронювати стіл</a>
+									</li>
+									<ul data-da=".nav-page, 1280" class="interaction__list-basket">
+										<li class="interaction__item">
+											<a href="#" class="interaction__link _icon-heard">
+												<span class="interaction-count">3</span>
+											</a>
+										</li>
+										<li class="interaction__item basket-not-mobile">
+											<a href="#" class="interaction__link _icon-basket ">
+												<span class="interaction-count">5</span>
+											</a>
+										</li>
+									</ul>
+								</ul>
+							</nav>
 
 
-
+						</div>
 					</div>
 				</div>
 
@@ -107,8 +126,15 @@
 		</header>
 		<main class="page">
 
-			<div class="first">
-				<div class="first__slider">
+
+			<div class="basket-mb">
+				<a href="#" class="interaction__link _icon-basket ">
+					<span class="interaction-count">5</span>
+				</a>
+			</div>
+
+			<div id="up" class="first ">
+				<div class="first__slider ">
 					<div class="swiper swiper-first">
 						<div class="swiper-wrapper ">
 							<div class="swiper-slide ">
@@ -153,14 +179,15 @@
 				</div>
 			</div>
 
-			<div class="popular">
+			<div class="popular ">
 				<div class="popular__container">
 					<div class="popular__block-title">
 						<h3 class="popular__title title">Найчастіше замовлюють</h3>
 					</div>
-					<div class="popular__slider">
-						<div class="swiper swiper-popular">
+					<div class="popular__slider ">
+						<div class="swiper swiper-popular ">
 							<div class="swiper-wrapper swiper-popular__wrapper">
+
 								<div class="swiper-slide">
 									<div class="popular-card">
 										<a href="#"></a>
@@ -247,12 +274,12 @@
 				</div>
 			</div>
 
-			<div class="pizza">
-				<div class="pizza__container">
+			<div class="pizza element-animation">
+				<div class="pizza__container  ">
 					<div class="pizza__block-title">
 						<h3 class="pizza__title title">Піцца</h3>
 					</div>
-					<div class="pizza__cards cards">
+					<div class="pizza__cards cards ">
 						<div class="card">
 							<a class="card__link" href="#"></a>
 							<div class="card__info">
@@ -1936,7 +1963,9 @@
 
 		</main>
 		<footer class="footer">
+
 			<div class="footer__container">
+				<a class="footer__link-up _icon-arrow-select" href="#up"></a>
 				<div class="footer__menu menu-footer">
 					<a class="footer__logo" href="#">
 						<img src="img/header/logo.svg" alt="logo">
@@ -1947,7 +1976,8 @@
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Політика конфіденційності</a></li>
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Способи оплати</a></li>
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Публічна оферта</a></li>
-							<li class="menu-footer__item"><a href="#" class="menu-footer__link-visa"><svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<!-- перемещаем по указаному классу при достижении указанного размера экрана -->
+							<li data-da=".menu-footer__list-soc , 650" class="menu-footer__item"><a href="#" class="menu-footer__link-visa"><svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0_54_34993)">
 											<path d="M36.5004 73.0008C56.6579 73.0008 72.9989 56.6599 72.9989 36.5024C72.9989 16.3448 56.6579 0.00390625 36.5004 0.00390625C16.3429 0.00390625 0.00195312 16.3448 0.00195312 36.5024C0.00195312 56.6599 16.3429 73.0008 36.5004 73.0008Z" fill="#F3F2F2" />
 											<path d="M27.0283 43.5024L29.8212 27.0107H34.3428L31.5501 43.5024H27.0283Z" fill="#293688" />
@@ -1980,6 +2010,7 @@
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">studio.org.ua@gmail.com</a></li>
 
 							<ul class="menu-footer__list-soc">
+
 								<li class="menu-footer__item"><a href="#" class="menu-footer__link-soc"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 											<g clip-path="url(#clip0_54_34172)">
 												<path d="M35 0H5C2.2425 0 0 2.2425 0 5V35C0 37.7575 2.2425 40 5 40H35C37.7575 40 40 37.7575 40 35V5C40 2.2425 37.7575 0 35 0Z" fill="#1976D2" />
@@ -2047,7 +2078,7 @@
 
 
 	</div>
-	<script src="js/app.min.js?_v=20230116233019"></script>
+	<script src="js/app.min.js?_v=20230117215358"></script>
 </body>
 
 </html>
