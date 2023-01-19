@@ -4187,6 +4187,37 @@
                 },
                 on: {}
             });
+            new core(".swiper-commodity", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 4,
+                spaceBetween: 24,
+                speed: 1e3,
+                navigation: {
+                    prevEl: ".commodity-btn-prev",
+                    nextEl: ".commodity-btn-next"
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    699.98: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    991.98: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    1440: {
+                        slidesPerView: 4,
+                        spaceBetween: 24
+                    }
+                },
+                on: {}
+            });
         }
     }
     window.addEventListener("load", (function(e) {
@@ -4401,17 +4432,12 @@
             el.classList.toggle("add-favorites-active");
         }));
     }));
-    function onEntry(entry) {
-        entry.forEach((change => {
-            if (change.isIntersecting) change.target.classList.add("element-show");
+    const ingridient = document.querySelectorAll(".ingredient");
+    ingridient.forEach((el => {
+        el.addEventListener("click", (() => {
+            el.classList.toggle("_ingredient-active");
         }));
-    }
-    let options = {
-        threshold: [ .5 ]
-    };
-    let observer = new IntersectionObserver(onEntry, options);
-    let script_elements = document.querySelectorAll(".element-animation");
-    for (let elm of script_elements) observer.observe(elm);
+    }));
     window["FLS"] = true;
     isWebp();
     spollers();

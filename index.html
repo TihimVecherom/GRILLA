@@ -16,20 +16,24 @@
 		<h2>Готовые страницы:</h2>
 		<ol class="rootpage__list">
 			<li><a target="_blank" href="home.html">Главная</a></li>
+			<li><a target="_blank" href="product.html">Cтраница товара</a></li>
+			<li><a target="_blank" href="about-us.html">Про нас</a></li>
+			<li><a target="_blank" href="public-offer.html">Публічна оферта</a></li>
+
 		</ol>
 		<h2>Попапы:</h2>
 		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html#"></a></li>
+			<li><a target="_blank" href="popups.html">Попапы</a></li>
 		</ol>
-		<div class="rootpage__tnx">
+		<!-- <div class="rootpage__tnx">
 			<h2>Спасибо за заказ!</h2>
 			<p>Буду рад хорошему отзыву.</p>
 			<p>Обращайтесь еще!</p>
-		</div>
-		<div class="rootpage__contacts">
+		</div> -->
+		<!-- <div class="rootpage__contacts">
 			<h2>Мои контакты:</h2>
 			<p>Телеграм: <a href="tel:+380992511793">+380992511793</a></p>
-		</div>
+		</div> -->
 	</div>
 </body>
 <style>
@@ -53,8 +57,10 @@
 		min-width: 320px;
 		width: 100%;
 		color: #fff;
-		background-color: #5e5373;
+		background: rgba(0, 0, 0, 0.726);
+		position: relative;
 	}
+
 
 	body {
 		font-family: Montserrat;
@@ -93,6 +99,8 @@
 	}
 
 	.rootpage {
+		position: relative;
+		z-index: 2;
 		padding: 30px;
 		display: flex;
 		flex-direction: column;

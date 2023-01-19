@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230117215358">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230119171451">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +16,88 @@
 	<div class="wrapper">
 		<header class="header">
 
+			<div id="fix" class="fix"></div>
+			<div id="favorites" class="popup popup-favorites">
+				<div class="popup__wrap">
+					<a class="popup__area-bg" href="#fix"></a>
+					<div class="popup__container container-favorites">
+						<div class="popup__content content-favorites">
+							<div class="popup__close-btn-wrap"><a class="button-close-popup" href="#fix"></a></div>
+							<div class="popup-favorites__items">
+
+								<div class="popup-favorites__item">
+									<a class="popup-item__link" href="#"></a>
+									<div class="popup-favorites__picture">
+										<picture><source srcset="img/main/products/pizza/1.webp" type="image/webp"><img src="img/main/products/pizza/1.png" alt="pizza"></picture>
+									</div>
+									<div class="popup-favorites__block-text">
+										<h3 class="popup-favorites__item-title">Піцца Італійська</h3>
+										<p class="popup-favorites__item-text">Розмір: 35 см </p>
+										<p class="popup-favorites__item-text">Вага: 900гр </p>
+									</div>
+									<div class="popup-favorites__buttons">
+										<a class="popup-favorites__button-add-basket _icon-basket" href="#fix"></a>
+										<button class="button-delet-item"></button>
+									</div>
+								</div>
+								<div class="popup-favorites__item">
+									<a class="popup-item__link" href="#"></a>
+									<div class="popup-favorites__picture">
+										<picture><source srcset="img/main/products/burgers/burger.webp" type="image/webp"><img src="img/main/products/burgers/burger.png" alt="pizza"></picture>
+									</div>
+									<div class="popup-favorites__block-text">
+										<h3 class="popup-favorites__item-title">Піцца Італійська</h3>
+										<p class="popup-favorites__item-text">Розмір: 35 см </p>
+										<p class="popup-favorites__item-text">Вага: 900гр </p>
+									</div>
+									<div class="popup-favorites__buttons">
+										<a class="popup-favorites__button-add-basket _icon-basket" href="#fix"></a>
+										<button class="button-delet-item"></button>
+									</div>
+								</div>
+								<div class="popup-favorites__item">
+									<a class="popup-item__link" href="#"></a>
+									<div class="popup-favorites__picture">
+										<picture><source srcset="img/main/products/beer/beer.webp" type="image/webp"><img src="img/main/products/beer/beer.png" alt="pizza"></picture>
+									</div>
+									<div class="popup-favorites__block-text">
+										<h3 class="popup-favorites__item-title">Піцца Італійська</h3>
+										<p class="popup-favorites__item-text">Розмір: 35 см </p>
+										<p class="popup-favorites__item-text">Вага: 900гр </p>
+									</div>
+									<div class="popup-favorites__buttons">
+										<a class="popup-favorites__button-add-basket _icon-basket" href="#fix"></a>
+										<button class="button-delet-item"></button>
+									</div>
+								</div>
+								<div class="popup-favorites__item">
+									<a class="popup-item__link" href="#"></a>
+									<div class="popup-favorites__picture">
+										<picture><source srcset="img/main/products/pizza/1.webp" type="image/webp"><img src="img/main/products/pizza/1.png" alt="pizza"></picture>
+									</div>
+									<div class="popup-favorites__block-text">
+										<h3 class="popup-favorites__item-title">Піцца Італійська</h3>
+										<p class="popup-favorites__item-text">Розмір: 35 см </p>
+										<p class="popup-favorites__item-text">Вага: 900гр </p>
+									</div>
+									<div class="popup-favorites__buttons">
+										<a class="popup-favorites__button-add-basket _icon-basket" href="#"></a>
+										<button class="button-delet-item"></button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
 
 
 			<div class="header__container">
+
 				<div class="header__top">
 					<div class="header__top-content">
 						<div class="header__top-block-logo">
@@ -57,7 +136,7 @@
 					<nav class="header__top-nav nav-page">
 						<ul data-da=".top-menu__body , 1280" class="nav-page__list">
 							<li class="nav-page__item"><a href="#" class="nav-page__link">Доставка</a></li>
-							<li class="nav-page__item"><a href="#" class="nav-page__link">Про нас</a></li>
+							<li class="nav-page__item"><a href="about-us.html" class="nav-page__link">Про нас</a></li>
 						</ul>
 						<a data-da=".top-menu__body , 850" href="#" class="button-user _icon-user">Вхiд</a>
 					</nav>
@@ -78,7 +157,7 @@
 				<div class="header__body">
 					<div class="header__body-wrap">
 						<div class="header__block-logo">
-							<a class="header__logo" href="home.html">
+							<a class="header__logo" href="#">
 								<img class="header__img" src="img/header/logo.svg" alt="logo">
 							</a>
 						</div>
@@ -104,10 +183,15 @@
 									</li>
 									<ul data-da=".nav-page, 1280" class="interaction__list-basket">
 										<li class="interaction__item">
-											<a href="#" class="interaction__link _icon-heard">
+											<a href="#favorites" class="interaction__link _icon-heard">
 												<span class="interaction-count">3</span>
 											</a>
 										</li>
+
+
+
+
+
 										<li class="interaction__item basket-not-mobile">
 											<a href="#" class="interaction__link _icon-basket ">
 												<span class="interaction-count">5</span>
@@ -274,14 +358,27 @@
 				</div>
 			</div>
 
-			<div class="pizza element-animation">
+			<div id="info" class="popup popup-info">
+				<div class="popup__wrap">
+					<a class="popup__area-bg" href="#fix"></a>
+					<div class="popup__container ">
+						<div class="popup__content popup-info-content">
+
+							<div class="popup-info-text _icon-heard-fill">товар добавлен в избранное</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="pizza ">
 				<div class="pizza__container  ">
 					<div class="pizza__block-title">
 						<h3 class="pizza__title title">Піцца</h3>
 					</div>
 					<div class="pizza__cards cards ">
 						<div class="card">
-							<a class="card__link" href="#"></a>
+							<a class="card__link" href="product.html"></a>
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 								<span class="new-product other-hit"><span>XIT </span><span>продаж</span></span>
@@ -294,11 +391,11 @@
 								<div class="product__content">
 									<div class="product__block-title">
 										<h4 class="product__title">М'ясне Сафарі <span>(4 м'яса)</span></h4>
-										<button class="button-add-favorites ">
+										<a href="#info" class="button-add-favorites ">
 											<svg width="43" height="40" viewBox="0 0 43 40" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M25.4516 2.70194L25.4517 2.70189C27.0131 1.90403 28.6952 1.5 30.4645 1.5C36.5481 1.5 41.5 6.45185 41.5 12.5355C41.5 16.8894 39.195 21.7364 34.2285 26.9562C30.1239 31.27 25.075 34.9004 21.5 37.2166C17.925 34.9003 12.8761 31.27 8.77155 26.9562C3.80499 21.7364 1.5 16.8894 1.5 12.5355C1.5 6.45185 6.45186 1.5 12.5354 1.5C14.3047 1.5 15.9868 1.90403 17.5484 2.7019L17.5484 2.70194C18.6094 3.24397 19.5878 3.96629 20.4281 4.82475L21.5 5.91985L22.5719 4.82475C23.4122 3.96629 24.3906 3.24397 25.4516 2.70194Z" fill="inherit" stroke="white" stroke-width="3" />
 											</svg>
-										</button>
+										</a>
 									</div>
 									<p class="product__text">
 										Салямі, кабаносі, шинка тостова, балик, маринована цибуля, сир моцарела, помідори, червоний соус</p>
@@ -338,7 +435,7 @@
 											<div class="quantity__plus"></div>
 										</div>
 										<div class="add-products__buttons-add ">
-											<button class="button-add-ingridient _icon-cross">Інгрідіенти</button>
+											<a href="#ingredients" class="button-add-ingridient _icon-cross">Інгрідіенти</a>
 											<div class="ingridient-count">+1</div>
 										</div>
 									</div>
@@ -1913,6 +2010,188 @@
 				</div>
 			</div>
 
+
+			<div id="ingredients" class="popup popup-ingredients">
+				<div class="popup__wrap">
+					<a class="popup__area-bg" href="#fix"></a>
+					<div class="popup__container popup-ingredients-container">
+						<div class="popup__content content-popup-ingredients">
+							<div class="popup__close-btn-wrap"><a class="button-close-popup" href="#fix"></a></div>
+							<div class="popup-ingredients__section">
+								<h2 class="popup-ingredients__title">Інгредіенти</h2>
+								<div class="ingredients">
+									<div class="ingredient">
+										<div class="ingredient__name">Курка</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Сир Моцарела</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Свежие томати</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Свежие томати</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Чесночный Оригинальный</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+								</div>
+								<h3 class="popup-ingredients__title-text">Додаткові інгредієнти</h3>
+								<p class="popup-ingredients__text">Щоб додати кілька однакових інгредієнтів, натисніть кілька разів.</p>
+								<div class="ingredients">
+									<div class="ingredient">
+										<div class="ingredient__name">Ананас</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Бекон</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Ветчина</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Грибы</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Курка</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Лук</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Маслини</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Огурци маринованные</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Охотничьи колбаски</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Пепперони</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Перец Халапеньо</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Свежие томаты</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус BBQ</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Карамельный</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Карбонара</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Сырный</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Сыр Чеддер</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Сыр Моцарелла</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Сыр Роккфорти</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Сыр Фета</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Груша консервированна</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Чесночный Оригинальный</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Пикант</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Сметанный с грибами</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Грилла</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+									<div class="ingredient">
+										<div class="ingredient__name">Соус Терияки</div>
+										<div class="ingredients__count">+1</div>
+										<button class="ingredient__button-del"></button>
+									</div>
+								</div>
+								<p class="popup-ingredients__text">Щоб додати кілька однакових інгредієнтів, натисніть кілька разів.</p>
+								<button class="popup-ingredients__button">
+									<span class="popup-ingredients__button-text">Оновити</span>
+									<span class="popup-ingredients__sum">545грн</span>
+								</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
 			<div class="events">
 				<div class="events__container">
 					<div class="events__section">
@@ -1973,9 +2252,9 @@
 					<nav class="menu-footer__body">
 						<ul class="menu-footer__list">
 							<li class="menu-footer__title">КЛІЄНТАМ:</li>
-							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Політика конфіденційності</a></li>
+							<li class="menu-footer__item"><a href="privacy.html" class="menu-footer__link">Політика конфіденційності</a></li>
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Способи оплати</a></li>
-							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Публічна оферта</a></li>
+							<li class="menu-footer__item"><a href="public-offer.html" class="menu-footer__link">Публічна оферта</a></li>
 							<!-- перемещаем по указаному классу при достижении указанного размера экрана -->
 							<li data-da=".menu-footer__list-soc , 650" class="menu-footer__item"><a href="#" class="menu-footer__link-visa"><svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<g clip-path="url(#clip0_54_34993)">
@@ -2078,7 +2357,7 @@
 
 
 	</div>
-	<script src="js/app.min.js?_v=20230117215358"></script>
+	<script src="js/app.min.js?_v=20230119171451"></script>
 </body>
 
 </html>
