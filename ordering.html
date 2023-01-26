@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Попапы</title>
+	<title>Оформлення заказу</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -221,209 +221,194 @@
 		</header>
 		<main class="page">
 
-
-
-			<div class="btns">
-				<a class="btn" href="#favorites">Избранное</a>
-				<a class="btn" href="#info">Добавлено в избранное</a>
-				<a class="btn" href="#ingredients">Ингридиенты</a>
+			<div class="basket-mb">
+				<a href="basket.html" class="interaction__link _icon-basket ">
+					<span class="interaction-count">5</span>
+				</a>
 			</div>
 
 
+			<div id="up" class="ordering">
+				<div class="ordering__container">
+					<h2 class="ordering__title title">Оформлення заказу</h2>
+					<div class="ordering__content">
 
-
-
-			<div id="info" class="popup popup-info">
-				<div class="popup__wrap">
-					<a class="popup__area-bg" href="#fix"></a>
-					<div class="popup__container ">
-						<div class="popup__content popup-info-content">
-							<div class="popup-info-text _icon-heard-fill">товар добавлен в избранное</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<div id="ingredients" class="popup popup-ingredients">
-				<div class="popup__wrap">
-					<a class="popup__area-bg" href="#fix"></a>
-					<div class="popup__container popup-ingredients-container">
-						<div class="popup__content content-popup-ingredients">
-							<div class="popup__close-btn-wrap"><a class="button-close-popup" href="#fix"></a></div>
-							<div class="popup-ingredients__section">
-								<h2 class="popup-ingredients__title">Інгредіенти</h2>
-								<div class="ingredients">
-									<div class="ingredient">
-										<div class="ingredient__name">Курка</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Сир Моцарела</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Свежие томати</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Свежие томати</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Чесночный Оригинальный</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
+						<div class="ordering__block-orders">
+							<div class="ordering__block-inputs">
+								<h3 class="ordering__inputs-title">Контактні данні</h3>
+								<div class="ordering__block-input">
+									<input class="input-form" type="text" placeholder="Ім’я">
+									<input class="input-form" type="text" placeholder="@Email">
 								</div>
-								<h3 class="popup-ingredients__title-text">Додаткові інгредієнти</h3>
-								<p class="popup-ingredients__text">Щоб додати кілька однакових інгредієнтів, натисніть кілька разів.</p>
-								<div class="ingredients">
-									<div class="ingredient">
-										<div class="ingredient__name">Ананас</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Бекон</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Ветчина</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Грибы</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Курка</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Лук</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Маслини</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Огурци маринованные</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Охотничьи колбаски</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Пепперони</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Перец Халапеньо</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Свежие томаты</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус BBQ</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Карамельный</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Карбонара</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Сырный</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Сыр Чеддер</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Сыр Моцарелла</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Сыр Роккфорти</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Сыр Фета</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Груша консервированна</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Чесночный Оригинальный</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Пикант</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Сметанный с грибами</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Грилла</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-									<div class="ingredient">
-										<div class="ingredient__name">Соус Терияки</div>
-										<div class="ingredients__count">+1</div>
-										<button class="ingredient__button-del"></button>
-									</div>
-								</div>
-								<p class="popup-ingredients__text">Щоб додати кілька однакових інгредієнтів, натисніть кілька разів.</p>
-								<button class="popup-ingredients__button">
-									<span class="popup-ingredients__button-text">Оновити</span>
-									<span class="popup-ingredients__sum">545грн</span>
-								</button>
 							</div>
-						</div>
-					</div>
+							<div data-tabs class="ordering-tabs">
 
+								<nav data-tabs-titles class="ordering-tabs__navigation">
+									<button type="submit" class="ordering-tabs__title _tab-active"> <span class=""></span> Самовивіз</button>
+									<button type="submit" class="ordering-tabs__title "> <span></span> Доставка </button>
+								</nav>
+
+								<div data-tabs-body class="ordering-tabs__content">
+									<div class="ordering-tabs__body ">
+										<div class="ordering__block-inputs">
+											<h3 class="ordering__inputs-title">Адреса закладів</h3>
+											<div class="ordering__block-input input-block-ordering">
+												<input checked type="radio" name="adress" id="adress-1">
+												<label class="ordering-label" for="adress-1">
+													<span class="orderin-label__circule"></span>
+													<span class="orderin-label__text">Вул. Какавишня, буд 666</span>
+												</label>
+												<input type="radio" name="adress" id="adress-2">
+												<label class="ordering-label" for="adress-2">
+													<span class="orderin-label__circule"></span>
+													<span class="orderin-label__text">Вул. ТихимВечором, буд 1</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="ordering-tabs__body">
+										<div class="ordering__block-inputs">
+											<h3 class="ordering__inputs-title">Адреса доставки</h3>
+											<div class="ordering__block-input input-block-choise">
+												<input checked type="radio" name="choise-1" id="type-adress">
+												<label class="ordering-label" for="type-adress">
+													<span class="orderin-label__circule"></span>
+													<span class="orderin-label__text">вул. великих Смітників, буд.0, кв. 43, п.3</span>
+												</label>
+												<input type="radio" name="choise-1" id="type-adress-1">
+												<label class="ordering-label" for="type-adress-1">
+													<span class="orderin-label__circule"></span>
+													<span class="orderin-label__text">Інша адреса</span>
+												</label>
+											</div>
+											<div class="adress-tabs__block-form">
+												<form class="form form-adres" action="post">
+													<input class="input-form" type="text" placeholder="Вул.*">
+													<input class="input-form" type="text" placeholder="Буд.*">
+													<input class="input-form" type="text" placeholder="Домофон">
+													<input class="input-form" type="text" placeholder="Кв.">
+													<input class="input-form" type="text" placeholder="Підїзд">
+													<input class="input-form" type="text" placeholder="Поверх">
+													<textarea class="input-form textarea-adres" placeholder="Назва (для закладів)"></textarea>
+												</form>
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+							<div class="ordering__block-inputs">
+								<h3 class="ordering__inputs-title">Обрати час</h3>
+								<div class="ordering__block-select">
+									<select name="form[]" class="header__select  _icon-arrow-select">
+										<option value="1" selected>Сьогодні</option>
+										<option value="2">Завтра</option>
+										<option value="3">дд.мм.рр</option>
+										<option value="4">дд.мм.рр</option>
+										<option value="5">дд.мм.рр</option>
+									</select>
+									<select name="form[]" class="header__select  _icon-arrow-select">
+										<option value="1" selected>Найближче</option>
+										<option value="2">19:25</option>
+										<option value="3">19:45</option>
+										<option value="4">20:05</option>
+										<option value="5">20:25</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="ordering__block-inputs">
+								<h3 class="ordering__inputs-title">Адреса закладів</h3>
+								<div class="ordering__block-input input-block-choise">
+									<input checked type="radio" name="choise" id="type-bay">
+									<label class="ordering-label" for="type-bay">
+										<span class="orderin-label__circule"></span>
+										<span class="orderin-label__text">Карта</span>
+									</label>
+									<input type="radio" name="choise" id="type-bay-1">
+									<label class="ordering-label" for="type-bay-1">
+										<span class="orderin-label__circule"></span>
+										<span class="orderin-label__text">Готівка</span>
+									</label>
+								</div>
+
+							</div>
+							<div class="ordering__block-inputs iputs-block-textarea">
+								<h3 class="ordering__inputs-title">Додати коментар</h3>
+
+								<textarea class="input-form textarea-adres" placeholder="Введіть текст"></textarea>
+							</div>
+
+						</div>
+						<div class="basket__block-sum orders-block-sum">
+							<div class="orders-block-sum__title">
+								<h2 class="title">Мої замовлення</h2>
+								<button class="button-corect">Редагувати</button>
+							</div>
+							<div class="orders-block-sum__items">
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+								<div class="orders-block-sum__item">
+									<h4 class="orders-block-sum__item-title">Картопля фрі</h4>
+									<p class="orders-block-sum__item-text">3шт</p>
+								</div>
+							</div>
+							<div class="basket__block-amount">
+
+								<div class="basket__amount-block-text">
+									<p class="basket__amount-text">Товари</p>
+									<p class="basket__amount-text">2450грн</p>
+								</div>
+								<div class="basket__amount-block-text">
+									<p class="basket__amount-text">Доставка</p>
+									<p class="basket__amount-text">0 грн/50 грн</p>
+								</div>
+								<div class="basket__amount-block-text">
+									<p class="basket__sum-text">РАЗОМ</p>
+									<p class="basket__sum-text">2500 грн</p>
+								</div>
+							</div>
+							<button class="button__sum-basket">ОФОРМИТИ</button>
+						</div>
+
+					</div>
 				</div>
+
 			</div>
 
 		</main>

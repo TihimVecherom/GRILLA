@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230119174025">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230126155548">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
 								<div class="popup-favorites__item">
 									<a class="popup-item__link" href="#"></a>
 									<div class="popup-favorites__picture">
-										<picture><source srcset="img/main/products/pizza/1.webp" type="image/webp"><img src="img/main/products/pizza/1.png" alt="pizza"></picture>
+										<img src="img/main/products/pizza/1.png" alt="pizza">
 									</div>
 									<div class="popup-favorites__block-text">
 										<h3 class="popup-favorites__item-title">Піцца Італійська</h3>
@@ -43,7 +43,7 @@
 								<div class="popup-favorites__item">
 									<a class="popup-item__link" href="#"></a>
 									<div class="popup-favorites__picture">
-										<picture><source srcset="img/main/products/burgers/burger.webp" type="image/webp"><img src="img/main/products/burgers/burger.png" alt="pizza"></picture>
+										<img src="img/main/products/burgers/burger.png" alt="pizza">
 									</div>
 									<div class="popup-favorites__block-text">
 										<h3 class="popup-favorites__item-title">Піцца Італійська</h3>
@@ -58,7 +58,7 @@
 								<div class="popup-favorites__item">
 									<a class="popup-item__link" href="#"></a>
 									<div class="popup-favorites__picture">
-										<picture><source srcset="img/main/products/beer/beer.webp" type="image/webp"><img src="img/main/products/beer/beer.png" alt="pizza"></picture>
+										<img src="img/main/products/beer/beer.png" alt="pizza">
 									</div>
 									<div class="popup-favorites__block-text">
 										<h3 class="popup-favorites__item-title">Піцца Італійська</h3>
@@ -73,7 +73,7 @@
 								<div class="popup-favorites__item">
 									<a class="popup-item__link" href="#"></a>
 									<div class="popup-favorites__picture">
-										<picture><source srcset="img/main/products/pizza/1.webp" type="image/webp"><img src="img/main/products/pizza/1.png" alt="pizza"></picture>
+										<img src="img/main/products/pizza/1.png" alt="pizza">
 									</div>
 									<div class="popup-favorites__block-text">
 										<h3 class="popup-favorites__item-title">Піцца Італійська</h3>
@@ -115,18 +115,29 @@
 							</button>
 						</div>
 						<div data-da=".top-menu__body , 1100" class="header__block-select">
-							<select name="form[]" class="header__select select-city _icon-arrow-select">
-								<option value="1" selected>Кропивницкий</option>
-								<option value="2">Киев</option>
-								<option value="3">Ужгород</option>
-								<option value="4">Париж</option>
+							<!-- <select name="form[]" class="header__select _icon-arrow-select">
+						<option value="1" selected><a href="#">Кропивницкий</a></option>
+						<option value="2">Киев</option>
+						<option value="3">Ужгород</option>
+						<option value="4">Париж</option>
+					</select> -->
 
-							</select>
-							<select name="form[]" class="header__select select-language _icon-arrow-select">
+							<div class="header__select-city">
+								<span class="header__city-title _icon-arrow-select">Кропивницкий</span>
+								<ul class="header__select-ul select-city">
+									<li class="select-city__item"><a class="select-city__link" href="#">Киев</a></li>
+									<li class="select-city__item"><a class="select-city__link" href="#">Ужгород</a></li>
+									<li class="select-city__item"><a class="select-city__link" href="#">Париж</a></li>
+								</ul>
+							</div>
+
+
+							<select name="form[]" class="header__select _icon-arrow-select">
 								<option value="1" selected>UA</option>
 								<option value="2">ENG</option>
 								<option value="3">RU</option>
 							</select>
+
 						</div>
 						<div class="header__block-info">
 							<p class="header__info-title">Години работи:</p>
@@ -135,7 +146,7 @@
 					</div>
 					<nav class="header__top-nav nav-page">
 						<ul data-da=".top-menu__body , 1280" class="nav-page__list">
-							<li class="nav-page__item"><a href="#" class="nav-page__link">Доставка</a></li>
+							<li class="nav-page__item"><a href="delivery.html" class="nav-page__link">Доставка</a></li>
 							<li class="nav-page__item"><a href="about-us.html" class="nav-page__link">Про нас</a></li>
 						</ul>
 						<a data-da=".top-menu__body , 850" href="#" class="button-user _icon-user">Вхiд</a>
@@ -179,7 +190,7 @@
 
 								<ul class="interaction__list">
 									<li class="interaction__item">
-										<a data-da=".top-menu__body, 1180" class="interaction__link-reservation" href="#">Бронювати стіл</a>
+										<a data-da=".top-menu__body, 1180" class="interaction__link-reservation" href="booking.html">Бронювати стіл</a>
 									</li>
 									<ul data-da=".nav-page, 1280" class="interaction__list-basket">
 										<li class="interaction__item">
@@ -193,7 +204,7 @@
 
 
 										<li class="interaction__item basket-not-mobile">
-											<a href="#" class="interaction__link _icon-basket ">
+											<a href="basket.html" class="interaction__link _icon-basket ">
 												<span class="interaction-count">5</span>
 											</a>
 										</li>
@@ -211,7 +222,7 @@
 		<main class="page">
 
 			<div class="basket-mb">
-				<a href="#" class="interaction__link _icon-basket ">
+				<a href="basket.html" class="interaction__link _icon-basket ">
 					<span class="interaction-count">5</span>
 				</a>
 			</div>
@@ -415,7 +426,7 @@
 				<div class="commodity__container">
 					<div class="commodity__product">
 						<div class="commodity__product-picture">
-							<picture><source srcset="img/main/products/pizza/1.webp" type="image/webp"><img src="img/main/products/pizza/1.png" alt="product"></picture>
+							<img src="img/main/products/pizza/1.png" alt="product">
 						</div>
 						<div class="commodity__content">
 							<div class="commodity__product-block-text">
@@ -582,7 +593,7 @@
 										</div>
 										<div class="card__product product">
 											<div class="product__picture">
-												<picture><source srcset="img/main/products/pizza/1.webp" type="image/webp"><img src="img/main/products/pizza/1.png" alt="pizza"></picture>
+												<img src="img/main/products/pizza/1.png" alt="pizza">
 											</div>
 											<div class="product__content">
 												<div class="product__block-title">
@@ -691,7 +702,7 @@
 										</div>
 										<div class="card__product product">
 											<div class="product__picture">
-												<picture><source srcset="img/main/products/burgers/burger.webp" type="image/webp"><img src="img/main/products/burgers/burger.png" alt="burger"></picture>
+												<img src="img/main/products/burgers/burger.png" alt="burger">
 											</div>
 											<div class="product__content">
 												<div class="product__block-title">
@@ -800,7 +811,7 @@
 										</div>
 										<div class="card__product product">
 											<div class="product__picture">
-												<picture><source srcset="img/main/products/beer/beer.webp" type="image/webp"><img src="img/main/products/beer/beer.png" alt="pizza"></picture>
+												<img src="img/main/products/beer/beer.png" alt="pizza">
 											</div>
 											<div class="product__content">
 												<div class="product__block-title">
@@ -880,7 +891,7 @@
 										</div>
 										<div class="card__product product">
 											<div class="product__picture">
-												<picture><source srcset="img/main/products/pizza/1.webp" type="image/webp"><img src="img/main/products/pizza/1.png" alt="pizza"></picture>
+												<img src="img/main/products/pizza/1.png" alt="pizza">
 											</div>
 											<div class="product__content">
 												<div class="product__block-title">
@@ -989,7 +1000,7 @@
 										</div>
 										<div class="card__product product">
 											<div class="product__picture">
-												<picture><source srcset="img/main/products/burgers/burger.webp" type="image/webp"><img src="img/main/products/burgers/burger.png" alt="burger"></picture>
+												<img src="img/main/products/burgers/burger.png" alt="burger">
 											</div>
 											<div class="product__content">
 												<div class="product__block-title">
@@ -1122,7 +1133,7 @@
 						<ul class="menu-footer__list">
 							<li class="menu-footer__title">КЛІЄНТАМ:</li>
 							<li class="menu-footer__item"><a href="privacy.html" class="menu-footer__link">Політика конфіденційності</a></li>
-							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Способи оплати</a></li>
+							<li class="menu-footer__item"><a href="payment.html" class="menu-footer__link">Способи оплати</a></li>
 							<li class="menu-footer__item"><a href="public-offer.html" class="menu-footer__link">Публічна оферта</a></li>
 							<!-- перемещаем по указаному классу при достижении указанного размера экрана -->
 							<li data-da=".menu-footer__list-soc , 650" class="menu-footer__item"><a href="#" class="menu-footer__link-visa"><svg width="73" height="73" viewBox="0 0 73 73" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1146,13 +1157,13 @@
 						</ul>
 						<ul class="menu-footer__list">
 							<li class="menu-footer__title">ІНФОРМАЦІЯ:</li>
-							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Акції</a></li>
-							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Заходи</a></li>
-							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Доставка і оплата</a></li>
+							<li class="menu-footer__item"><a href="contacts.html" class="menu-footer__link">Контакти</a></li>
+							<li class="menu-footer__item"><a href="blog.html" class="menu-footer__link">Заходи</a></li>
+							<li class="menu-footer__item"><a href="delivery.html" class="menu-footer__link">Доставка і оплата</a></li>
 						</ul>
 						<ul class="menu-footer__list">
 							<li class="menu-footer__title">КОНТАКТИ:</li>
-							<li class="menu-footer__item"><a href="#" class="menu-footer__link">(066) 222-00-13 Vodafone</a></li>
+							<li class="menu-footer__item"><a href="tel:+380662220013" class="menu-footer__link">(066) 222-00-13 Vodafone</a></li>
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">м.Кропивницький</a></li>
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">вул. Пашутинська 61/84</a></li>
 							<li class="menu-footer__item"><a href="#" class="menu-footer__link">studio.org.ua@gmail.com</a></li>
@@ -1226,7 +1237,7 @@
 
 
 	</div>
-	<script src="js/app.min.js?_v=20230119174025"></script>
+	<script src="js/app.min.js?_v=20230126155548"></script>
 </body>
 
 </html>

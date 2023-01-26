@@ -14,6 +14,20 @@
             document.documentElement.classList.add(className);
         }));
     }
+    function addLoadedClass() {
+        window.addEventListener("load", (function() {
+            setTimeout((function() {
+                document.documentElement.classList.add("loaded");
+            }), 0);
+        }));
+    }
+    function functions_getHash() {
+        if (location.hash) return location.hash.replace("#", "");
+    }
+    function setHash(hash) {
+        hash = hash ? `#${hash}` : window.location.href.split("#")[0];
+        history.pushState("", "", hash);
+    }
     let _slideUp = (target, duration = 500, showmore = 0) => {
         if (!target.classList.contains("_slide")) {
             target.classList.add("_slide");
@@ -161,6 +175,103 @@
                     }
                 }));
             }));
+        }
+    }
+    function tabs() {
+        const tabs = document.querySelectorAll("[data-tabs]");
+        let tabsActiveHash = [];
+        if (tabs.length > 0) {
+            const hash = functions_getHash();
+            if (hash && hash.startsWith("tab-")) tabsActiveHash = hash.replace("tab-", "").split("-");
+            tabs.forEach(((tabsBlock, index) => {
+                tabsBlock.classList.add("_tab-init");
+                tabsBlock.setAttribute("data-tabs-index", index);
+                tabsBlock.addEventListener("click", setTabsAction);
+                initTabs(tabsBlock);
+            }));
+            let mdQueriesArray = dataMediaQueries(tabs, "tabs");
+            if (mdQueriesArray && mdQueriesArray.length) mdQueriesArray.forEach((mdQueriesItem => {
+                mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                    setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                }));
+                setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+            }));
+        }
+        function setTitlePosition(tabsMediaArray, matchMedia) {
+            tabsMediaArray.forEach((tabsMediaItem => {
+                tabsMediaItem = tabsMediaItem.item;
+                let tabsTitles = tabsMediaItem.querySelector("[data-tabs-titles]");
+                let tabsTitleItems = tabsMediaItem.querySelectorAll("[data-tabs-title]");
+                let tabsContent = tabsMediaItem.querySelector("[data-tabs-body]");
+                let tabsContentItems = tabsMediaItem.querySelectorAll("[data-tabs-item]");
+                tabsTitleItems = Array.from(tabsTitleItems).filter((item => item.closest("[data-tabs]") === tabsMediaItem));
+                tabsContentItems = Array.from(tabsContentItems).filter((item => item.closest("[data-tabs]") === tabsMediaItem));
+                tabsContentItems.forEach(((tabsContentItem, index) => {
+                    if (matchMedia.matches) {
+                        tabsContent.append(tabsTitleItems[index]);
+                        tabsContent.append(tabsContentItem);
+                        tabsMediaItem.classList.add("_tab-spoller");
+                    } else {
+                        tabsTitles.append(tabsTitleItems[index]);
+                        tabsMediaItem.classList.remove("_tab-spoller");
+                    }
+                }));
+            }));
+        }
+        function initTabs(tabsBlock) {
+            let tabsTitles = tabsBlock.querySelectorAll("[data-tabs-titles]>*");
+            let tabsContent = tabsBlock.querySelectorAll("[data-tabs-body]>*");
+            const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+            const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
+            if (tabsActiveHashBlock) {
+                const tabsActiveTitle = tabsBlock.querySelector("[data-tabs-titles]>._tab-active");
+                tabsActiveTitle ? tabsActiveTitle.classList.remove("_tab-active") : null;
+            }
+            if (tabsContent.length) {
+                tabsContent = Array.from(tabsContent).filter((item => item.closest("[data-tabs]") === tabsBlock));
+                tabsTitles = Array.from(tabsTitles).filter((item => item.closest("[data-tabs]") === tabsBlock));
+                tabsContent.forEach(((tabsContentItem, index) => {
+                    tabsTitles[index].setAttribute("data-tabs-title", "");
+                    tabsContentItem.setAttribute("data-tabs-item", "");
+                    if (tabsActiveHashBlock && index == tabsActiveHash[1]) tabsTitles[index].classList.add("_tab-active");
+                    tabsContentItem.hidden = !tabsTitles[index].classList.contains("_tab-active");
+                }));
+            }
+        }
+        function setTabsStatus(tabsBlock) {
+            let tabsTitles = tabsBlock.querySelectorAll("[data-tabs-title]");
+            let tabsContent = tabsBlock.querySelectorAll("[data-tabs-item]");
+            const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+            function isTabsAnamate(tabsBlock) {
+                if (tabsBlock.hasAttribute("data-tabs-animate")) return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
+            }
+            const tabsBlockAnimate = isTabsAnamate(tabsBlock);
+            if (tabsContent.length > 0) {
+                const isHash = tabsBlock.hasAttribute("data-tabs-hash");
+                tabsContent = Array.from(tabsContent).filter((item => item.closest("[data-tabs]") === tabsBlock));
+                tabsTitles = Array.from(tabsTitles).filter((item => item.closest("[data-tabs]") === tabsBlock));
+                tabsContent.forEach(((tabsContentItem, index) => {
+                    if (tabsTitles[index].classList.contains("_tab-active")) {
+                        if (tabsBlockAnimate) _slideDown(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = false;
+                        if (isHash && !tabsContentItem.closest(".popup")) setHash(`tab-${tabsBlockIndex}-${index}`);
+                    } else if (tabsBlockAnimate) _slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
+                }));
+            }
+        }
+        function setTabsAction(e) {
+            const el = e.target;
+            if (el.closest("[data-tabs-title]")) {
+                const tabTitle = el.closest("[data-tabs-title]");
+                const tabsBlock = tabTitle.closest("[data-tabs]");
+                if (!tabTitle.classList.contains("_tab-active") && !tabsBlock.querySelector("._slide")) {
+                    let tabActiveTitle = tabsBlock.querySelectorAll("[data-tabs-title]._tab-active");
+                    tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter((item => item.closest("[data-tabs]") === tabsBlock)) : null;
+                    tabActiveTitle.length ? tabActiveTitle[0].classList.remove("_tab-active") : null;
+                    tabTitle.classList.add("_tab-active");
+                    setTabsStatus(tabsBlock);
+                }
+                e.preventDefault();
+            }
         }
     }
     function functions_FLS(message) {
@@ -3957,6 +4068,184 @@
             destroy
         });
     }
+    function Lazy({swiper, extendParams, on, emit}) {
+        extendParams({
+            lazy: {
+                checkInView: false,
+                enabled: false,
+                loadPrevNext: false,
+                loadPrevNextAmount: 1,
+                loadOnTransitionStart: false,
+                scrollingElement: "",
+                elementClass: "swiper-lazy",
+                loadingClass: "swiper-lazy-loading",
+                loadedClass: "swiper-lazy-loaded",
+                preloaderClass: "swiper-lazy-preloader"
+            }
+        });
+        swiper.lazy = {};
+        let scrollHandlerAttached = false;
+        let initialImageLoaded = false;
+        function loadInSlide(index, loadInDuplicate = true) {
+            const params = swiper.params.lazy;
+            if ("undefined" === typeof index) return;
+            if (0 === swiper.slides.length) return;
+            const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
+            const $slideEl = isVirtual ? swiper.$wrapperEl.children(`.${swiper.params.slideClass}[data-swiper-slide-index="${index}"]`) : swiper.slides.eq(index);
+            const $images = $slideEl.find(`.${params.elementClass}:not(.${params.loadedClass}):not(.${params.loadingClass})`);
+            if ($slideEl.hasClass(params.elementClass) && !$slideEl.hasClass(params.loadedClass) && !$slideEl.hasClass(params.loadingClass)) $images.push($slideEl[0]);
+            if (0 === $images.length) return;
+            $images.each((imageEl => {
+                const $imageEl = dom(imageEl);
+                $imageEl.addClass(params.loadingClass);
+                const background = $imageEl.attr("data-background");
+                const src = $imageEl.attr("data-src");
+                const srcset = $imageEl.attr("data-srcset");
+                const sizes = $imageEl.attr("data-sizes");
+                const $pictureEl = $imageEl.parent("picture");
+                swiper.loadImage($imageEl[0], src || background, srcset, sizes, false, (() => {
+                    if ("undefined" === typeof swiper || null === swiper || !swiper || swiper && !swiper.params || swiper.destroyed) return;
+                    if (background) {
+                        $imageEl.css("background-image", `url("${background}")`);
+                        $imageEl.removeAttr("data-background");
+                    } else {
+                        if (srcset) {
+                            $imageEl.attr("srcset", srcset);
+                            $imageEl.removeAttr("data-srcset");
+                        }
+                        if (sizes) {
+                            $imageEl.attr("sizes", sizes);
+                            $imageEl.removeAttr("data-sizes");
+                        }
+                        if ($pictureEl.length) $pictureEl.children("source").each((sourceEl => {
+                            const $source = dom(sourceEl);
+                            if ($source.attr("data-srcset")) {
+                                $source.attr("srcset", $source.attr("data-srcset"));
+                                $source.removeAttr("data-srcset");
+                            }
+                        }));
+                        if (src) {
+                            $imageEl.attr("src", src);
+                            $imageEl.removeAttr("data-src");
+                        }
+                    }
+                    $imageEl.addClass(params.loadedClass).removeClass(params.loadingClass);
+                    $slideEl.find(`.${params.preloaderClass}`).remove();
+                    if (swiper.params.loop && loadInDuplicate) {
+                        const slideOriginalIndex = $slideEl.attr("data-swiper-slide-index");
+                        if ($slideEl.hasClass(swiper.params.slideDuplicateClass)) {
+                            const originalSlide = swiper.$wrapperEl.children(`[data-swiper-slide-index="${slideOriginalIndex}"]:not(.${swiper.params.slideDuplicateClass})`);
+                            loadInSlide(originalSlide.index(), false);
+                        } else {
+                            const duplicatedSlide = swiper.$wrapperEl.children(`.${swiper.params.slideDuplicateClass}[data-swiper-slide-index="${slideOriginalIndex}"]`);
+                            loadInSlide(duplicatedSlide.index(), false);
+                        }
+                    }
+                    emit("lazyImageReady", $slideEl[0], $imageEl[0]);
+                    if (swiper.params.autoHeight) swiper.updateAutoHeight();
+                }));
+                emit("lazyImageLoad", $slideEl[0], $imageEl[0]);
+            }));
+        }
+        function load() {
+            const {$wrapperEl, params: swiperParams, slides, activeIndex} = swiper;
+            const isVirtual = swiper.virtual && swiperParams.virtual.enabled;
+            const params = swiperParams.lazy;
+            let slidesPerView = swiperParams.slidesPerView;
+            if ("auto" === slidesPerView) slidesPerView = 0;
+            function slideExist(index) {
+                if (isVirtual) {
+                    if ($wrapperEl.children(`.${swiperParams.slideClass}[data-swiper-slide-index="${index}"]`).length) return true;
+                } else if (slides[index]) return true;
+                return false;
+            }
+            function slideIndex(slideEl) {
+                if (isVirtual) return dom(slideEl).attr("data-swiper-slide-index");
+                return dom(slideEl).index();
+            }
+            if (!initialImageLoaded) initialImageLoaded = true;
+            if (swiper.params.watchSlidesProgress) $wrapperEl.children(`.${swiperParams.slideVisibleClass}`).each((slideEl => {
+                const index = isVirtual ? dom(slideEl).attr("data-swiper-slide-index") : dom(slideEl).index();
+                loadInSlide(index);
+            })); else if (slidesPerView > 1) {
+                for (let i = activeIndex; i < activeIndex + slidesPerView; i += 1) if (slideExist(i)) loadInSlide(i);
+            } else loadInSlide(activeIndex);
+            if (params.loadPrevNext) if (slidesPerView > 1 || params.loadPrevNextAmount && params.loadPrevNextAmount > 1) {
+                const amount = params.loadPrevNextAmount;
+                const spv = Math.ceil(slidesPerView);
+                const maxIndex = Math.min(activeIndex + spv + Math.max(amount, spv), slides.length);
+                const minIndex = Math.max(activeIndex - Math.max(spv, amount), 0);
+                for (let i = activeIndex + spv; i < maxIndex; i += 1) if (slideExist(i)) loadInSlide(i);
+                for (let i = minIndex; i < activeIndex; i += 1) if (slideExist(i)) loadInSlide(i);
+            } else {
+                const nextSlide = $wrapperEl.children(`.${swiperParams.slideNextClass}`);
+                if (nextSlide.length > 0) loadInSlide(slideIndex(nextSlide));
+                const prevSlide = $wrapperEl.children(`.${swiperParams.slidePrevClass}`);
+                if (prevSlide.length > 0) loadInSlide(slideIndex(prevSlide));
+            }
+        }
+        function checkInViewOnLoad() {
+            const window = ssr_window_esm_getWindow();
+            if (!swiper || swiper.destroyed) return;
+            const $scrollElement = swiper.params.lazy.scrollingElement ? dom(swiper.params.lazy.scrollingElement) : dom(window);
+            const isWindow = $scrollElement[0] === window;
+            const scrollElementWidth = isWindow ? window.innerWidth : $scrollElement[0].offsetWidth;
+            const scrollElementHeight = isWindow ? window.innerHeight : $scrollElement[0].offsetHeight;
+            const swiperOffset = swiper.$el.offset();
+            const {rtlTranslate: rtl} = swiper;
+            let inView = false;
+            if (rtl) swiperOffset.left -= swiper.$el[0].scrollLeft;
+            const swiperCoord = [ [ swiperOffset.left, swiperOffset.top ], [ swiperOffset.left + swiper.width, swiperOffset.top ], [ swiperOffset.left, swiperOffset.top + swiper.height ], [ swiperOffset.left + swiper.width, swiperOffset.top + swiper.height ] ];
+            for (let i = 0; i < swiperCoord.length; i += 1) {
+                const point = swiperCoord[i];
+                if (point[0] >= 0 && point[0] <= scrollElementWidth && point[1] >= 0 && point[1] <= scrollElementHeight) {
+                    if (0 === point[0] && 0 === point[1]) continue;
+                    inView = true;
+                }
+            }
+            const passiveListener = "touchstart" === swiper.touchEvents.start && swiper.support.passiveListener && swiper.params.passiveListeners ? {
+                passive: true,
+                capture: false
+            } : false;
+            if (inView) {
+                load();
+                $scrollElement.off("scroll", checkInViewOnLoad, passiveListener);
+            } else if (!scrollHandlerAttached) {
+                scrollHandlerAttached = true;
+                $scrollElement.on("scroll", checkInViewOnLoad, passiveListener);
+            }
+        }
+        on("beforeInit", (() => {
+            if (swiper.params.lazy.enabled && swiper.params.preloadImages) swiper.params.preloadImages = false;
+        }));
+        on("init", (() => {
+            if (swiper.params.lazy.enabled) if (swiper.params.lazy.checkInView) checkInViewOnLoad(); else load();
+        }));
+        on("scroll", (() => {
+            if (swiper.params.freeMode && swiper.params.freeMode.enabled && !swiper.params.freeMode.sticky) load();
+        }));
+        on("scrollbarDragMove resize _freeModeNoMomentumRelease", (() => {
+            if (swiper.params.lazy.enabled) if (swiper.params.lazy.checkInView) checkInViewOnLoad(); else load();
+        }));
+        on("transitionStart", (() => {
+            if (swiper.params.lazy.enabled) if (swiper.params.lazy.loadOnTransitionStart || !swiper.params.lazy.loadOnTransitionStart && !initialImageLoaded) if (swiper.params.lazy.checkInView) checkInViewOnLoad(); else load();
+        }));
+        on("transitionEnd", (() => {
+            if (swiper.params.lazy.enabled && !swiper.params.lazy.loadOnTransitionStart) if (swiper.params.lazy.checkInView) checkInViewOnLoad(); else load();
+        }));
+        on("slideChange", (() => {
+            const {lazy, cssMode, watchSlidesProgress, touchReleaseOnEdges, resistanceRatio} = swiper.params;
+            if (lazy.enabled && (cssMode || watchSlidesProgress && (touchReleaseOnEdges || 0 === resistanceRatio))) load();
+        }));
+        on("destroy", (() => {
+            if (!swiper.$el) return;
+            swiper.$el.find(`.${swiper.params.lazy.loadingClass}`).removeClass(swiper.params.lazy.loadingClass);
+        }));
+        Object.assign(swiper.lazy, {
+            load,
+            loadInSlide
+        });
+    }
     function Autoplay({swiper, extendParams, on, emit}) {
         let timeout;
         swiper.autoplay = {
@@ -4116,7 +4405,7 @@
     function initSliders() {
         if (document.querySelector(".swiper")) {
             new core(".swiper-first", {
-                modules: [ Navigation, Pagination, Autoplay ],
+                modules: [ Navigation, Pagination, Autoplay, Lazy ],
                 observer: true,
                 observeParents: true,
                 slidesPerView: 1,
@@ -4124,7 +4413,8 @@
                 autoHeight: true,
                 speed: 1e3,
                 loop: true,
-                effect: "fade",
+                preloadImages: true,
+                lazy: true,
                 autoplay: {
                     delay: 2e3,
                     disableOnInteraction: false
@@ -4215,6 +4505,22 @@
                         slidesPerView: 4,
                         spaceBetween: 24
                     }
+                },
+                on: {}
+            });
+            new core(".swiper-promotion", {
+                modules: [ Navigation, Pagination, Autoplay, Lazy ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 30,
+                autoHeight: true,
+                speed: 1e3,
+                preloadImages: true,
+                lazy: true,
+                autoplay: {
+                    delay: 3e3,
+                    disableOnInteraction: false
                 },
                 on: {}
             });
@@ -4384,7 +4690,8 @@
             "--bg-card": "#131C34",
             "--bg-add-product": "#ffffff",
             "--bg-add-count": "#9600FF",
-            "--bg-button-basket": "rgba(255, 255, 255, 0.46)"
+            "--bg-button-basket": "rgba(255, 255, 255, 0.46)",
+            "--bg-order": "#21315B"
         },
         white: {
             "--text-color": "#000",
@@ -4395,7 +4702,8 @@
             "--bg-card": "#fff",
             "--bg-add-product": "rgba(4, 0, 65, 0.58)",
             "--bg-add-count": "#ffffff",
-            "--bg-button-basket": "rgba(11, 10, 35, 0.46)"
+            "--bg-button-basket": "rgba(11, 10, 35, 0.46)",
+            "--bg-order": "#EDEDED"
         }
     };
     if (!localStorage.getItem("theme")) localStorage.setItem("theme", false);
@@ -4438,8 +4746,29 @@
             el.classList.toggle("_ingredient-active");
         }));
     }));
+    const script_events = document.querySelectorAll(".events__section");
+    script_events.forEach((eve => {
+        let buttonOpens = eve.querySelector(".events__button");
+        let adds = eve.querySelector(".events__block-min");
+        let contineText = eve.querySelector(".contine-text-event");
+        let closeEvent = eve.querySelector(".close-event");
+        buttonOpens.addEventListener("click", (() => {
+            buttonOpens.classList.toggle("_button-events-active");
+            if (contineText) contineText.classList.toggle("_events-text-active");
+            if (closeEvent) closeEvent.classList.toggle("_close-event-active");
+            if (adds) adds.classList.toggle("_events-active");
+        }));
+        closeEvent.addEventListener("click", (() => {
+            closeEvent.classList.toggle("_close-event-active");
+            if (contineText) contineText.classList.toggle("_events-text-active");
+            if (buttonOpens) buttonOpens.classList.toggle("_button-events-active");
+            if (adds) adds.classList.toggle("_events-active");
+        }));
+    }));
     window["FLS"] = true;
     isWebp();
+    addLoadedClass();
     spollers();
+    tabs();
     headerScroll();
 })();
