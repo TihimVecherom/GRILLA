@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230127114037">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230127215842">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,12 +115,7 @@
 							</button>
 						</div>
 						<div data-da=".top-menu__body , 1100" class="header__block-select">
-							<!-- <select name="form[]" class="header__select _icon-arrow-select">
-						<option value="1" selected><a href="#">Кропивницкий</a></option>
-						<option value="2">Киев</option>
-						<option value="3">Ужгород</option>
-						<option value="4">Париж</option>
-					</select> -->
+
 
 							<div class="header__select-city">
 								<span class="header__city-title _icon-arrow-select">Кропивницкий</span>
@@ -231,7 +226,7 @@
 			<div id="up" class="halfs">
 				<div class="halfs__container">
 					<div class="halfs__block-title">
-						<a class="button-back-page _icon-arrow-select" href="#">Назад</a>
+						<a class="button-back-page _icon-arrow-select" href="#"><span>Назад</span></a>
 						<h2 class="halfs__title title">Оберіть половинки</h2>
 					</div>
 					<div class="halfs__block">
@@ -369,41 +364,37 @@
 
 							</div>
 
-							<div class="add-products__block-input choise">
+							<div class="halfs__content__buttons">
+								<div class="add-products__block-input choise">
+									<input class="choise__input" type="radio" name="size-pizza" id="inp">
+									<label class="choise__label" for="inp">
+										<span>
+											30 см <br>
+											(620 грам)
+										</span>
+									</label>
 
-								<input class="choise__input" type="radio" name="size-pizza" id="inp">
-								<label class="choise__label" for="inp">
-									<span>
-										30 см <br>
-										(620 грам)
-									</span>
-								</label>
-
-								<input checked class="choise__input" type="radio" name="size-pizza" id="inp-2">
-								<label class="choise__label" for="inp-2">
-									<span>
-										40 см <br>
-										(800 грам)
-									</span>
-								</label>
-
-								<input class="choise__input" type="radio" name="size-pizza" id="inp-3">
-								<label class="choise__label" for="inp-3">
-									<span>
-										60 см <br>
-										(1900 грам)
-									</span>
-								</label>
-
-							</div>
-
-							<div class="add-products__buttons-basket">
-
-								<a class="button-add" href="#">
-									<span class="price-product">210 грн.</span>
-									<span class="button-add__text">В корзину</span>
-								</a>
-
+									<input checked class="choise__input" type="radio" name="size-pizza" id="inp-2">
+									<label class="choise__label" for="inp-2">
+										<span>
+											40 см <br>
+											(800 грам)
+										</span>
+									</label>
+									<input class="choise__input" type="radio" name="size-pizza" id="inp-3">
+									<label class="choise__label" for="inp-3">
+										<span>
+											60 см <br>
+											(1900 грам)
+										</span>
+									</label>
+								</div>
+								<div class="add-products__buttons-basket">
+									<a class="button-add" href="#">
+										<span class="price-product">210 грн.</span>
+										<span class="button-add__text">В корзину</span>
+									</a>
+								</div>
 							</div>
 
 						</div>
@@ -411,7 +402,7 @@
 					</div>
 					<div class="halfs__cards cards ">
 						<div class="card ">
-							<a class="card__link" href="product.html"></a>
+
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 
@@ -444,7 +435,7 @@
 
 						</div>
 						<div class="card ">
-							<a class="card__link" href="product.html"></a>
+
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 
@@ -477,7 +468,7 @@
 
 						</div>
 						<div class="card ">
-							<a class="card__link" href="product.html"></a>
+
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 
@@ -510,7 +501,7 @@
 
 						</div>
 						<div class="card ">
-							<a class="card__link" href="product.html"></a>
+
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 
@@ -543,7 +534,7 @@
 
 						</div>
 						<div class="card ">
-							<a class="card__link" href="product.html"></a>
+
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 
@@ -576,7 +567,7 @@
 
 						</div>
 						<div class="card ">
-							<a class="card__link" href="product.html"></a>
+
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 
@@ -609,7 +600,7 @@
 
 						</div>
 						<div class="card ">
-							<a class="card__link" href="product.html"></a>
+
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 
@@ -642,7 +633,7 @@
 
 						</div>
 						<div class="card ">
-							<a class="card__link" href="product.html"></a>
+
 							<div class="card__info">
 								<span class="new-product other-new">new</span>
 
@@ -797,7 +788,7 @@
 
 
 	</div>
-	<script src="js/app.min.js?_v=20230127114037"></script>
+	<script src="js/app.min.js?_v=20230127215842"></script>
 </body>
 
 </html>
