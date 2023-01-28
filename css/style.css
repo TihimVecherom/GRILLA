@@ -769,6 +769,7 @@ h6 {
   --bg-add-count: #9600FF;
   --bg-button-basket: rgba(11, 10, 35, 0.46);
   --bg-order: #21315B;
+  --bg-img: url("../img/bg2.png") repeat;
 }
 
 body {
@@ -777,7 +778,7 @@ body {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
-  background: var(--bg-color);
+  background: var(--bg-img);
   position: relative;
 }
 
@@ -798,7 +799,7 @@ body {
 }
 
 main {
-  background: var(--bg-color);
+  background: var(--bg-img);
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
@@ -1253,7 +1254,7 @@ div:active {
 }
 
 .pizza {
-  padding-top: 60px;
+  padding-top: 100px;
 }
 
 .cards {
@@ -2635,15 +2636,15 @@ div:active {
   border-radius: 20px;
 }
 
-@supports (min-height: clamp( 18.75rem , 13.6030405405rem  +  24.954954955vw , 36.0625rem )) {
+@supports (min-height: clamp( 18.75rem , 15.0337837838rem  +  18.018018018vw , 31.25rem )) {
   .blog__first {
-    min-height: clamp( 18.75rem , 13.6030405405rem  +  24.954954955vw , 36.0625rem );
+    min-height: clamp( 18.75rem , 15.0337837838rem  +  18.018018018vw , 31.25rem );
   }
 }
 
-@supports not (min-height: clamp( 18.75rem , 13.6030405405rem  +  24.954954955vw , 36.0625rem )) {
+@supports not (min-height: clamp( 18.75rem , 15.0337837838rem  +  18.018018018vw , 31.25rem )) {
   .blog__first {
-    min-height: calc(18.75rem + 17.3125 * (100vw - 20.625rem) / 69.375);
+    min-height: calc(18.75rem + 12.5 * (100vw - 20.625rem) / 69.375);
   }
 }
 
@@ -5595,6 +5596,11 @@ div:active {
      object-fit: contain;
 }
 
+.title-blog {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .basket__item-block-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6636,6 +6642,8 @@ div:active {
   -o-transition: 0.2s;
   transition: 0.2s;
   opacity: 0;
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
   -webkit-animation-name: visibl;
           animation-name: visibl;
   -webkit-animation-duration: 1s;
@@ -8550,6 +8558,10 @@ div:active {
     height: 100px;
   }
 
+  .pizza {
+    padding-top: 30px;
+  }
+
   .promotion {
     margin-left: -15px;
     margin-right: -15px;
@@ -8924,6 +8936,11 @@ div:active {
 
   .basket {
     padding-top: 20px;
+  }
+
+  .title-blog {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
   }
 
   .ordering {

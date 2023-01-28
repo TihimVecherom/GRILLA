@@ -4746,7 +4746,8 @@
             "--bg-add-product": "#ffffff",
             "--bg-add-count": "#9600FF",
             "--bg-button-basket": "rgba(255, 255, 255, 0.46)",
-            "--bg-order": "#21315B"
+            "--bg-order": "#21315B",
+            "--bg-img": "url('../img/bg2.png') repeat"
         },
         white: {
             "--text-color": "#000",
@@ -4758,7 +4759,8 @@
             "--bg-add-product": "rgba(4, 0, 65, 0.58)",
             "--bg-add-count": "#ffffff",
             "--bg-button-basket": "rgba(11, 10, 35, 0.46)",
-            "--bg-order": "#EDEDED"
+            "--bg-order": "#EDEDED",
+            "--bg-img": "url('../img/bg1.png') repeat"
         }
     };
     if (!localStorage.getItem("theme")) localStorage.setItem("theme", false);
