@@ -5705,26 +5705,6 @@ div:active {
   gap: 20px;
 }
 
-.basket-wrap-mb {
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-  background: transparent;
-  -webkit-backdrop-filter: blur(0px);
-          backdrop-filter: blur(0px);
-}
-
-._basket-wrap-mb-active {
-  height: -webkit-max-content !important;
-  height: -moz-max-content !important;
-  height: max-content !important;
-  background: rgba(255, 255, 255, 0.397);
-  -webkit-box-shadow: 0 0 16px rgba(9, 8, 25, 0.1);
-          box-shadow: 0 0 16px rgba(9, 8, 25, 0.1);
-  -webkit-backdrop-filter: blur(53px);
-          backdrop-filter: blur(53px);
-}
-
 .close-form-mb {
   -webkit-box-shadow: 0 0 16px rgba(9, 8, 25, 0.356);
           box-shadow: 0 0 16px rgba(9, 8, 25, 0.356);
@@ -8789,6 +8769,34 @@ div:active {
     padding: 20px;
   }
 
+  .halfs__block-min {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 10px;
+    gap: 5px;
+    background: transparent;
+    -webkit-backdrop-filter: blur(53px);
+            backdrop-filter: blur(53px);
+    border-radius: 30px 30px 0 0;
+  }
+
+  .halfs__block-min-content {
+    max-width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    min-width: 100%;
+    padding: 5px 15px;
+  }
+
   .events__block-btn-close {
     display: none;
   }
@@ -8807,6 +8815,7 @@ div:active {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 0px;
   }
 
   .tabs__wrap {
@@ -8816,12 +8825,8 @@ div:active {
   }
 
   .tabs__navigation {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 0px;
@@ -8840,12 +8845,14 @@ div:active {
     gap: 10px;
     border-radius: 50px;
     padding: 10px 15px;
+    max-width: 60%;
   }
 
   .button-exit {
     border-top: 0px solid var(--text-color);
     border-radius: 50px;
     padding: 10px 15px;
+    max-width: 60%;
   }
 
   .user-tabs {
@@ -8941,6 +8948,26 @@ div:active {
     -webkit-transform: translate(0, 0%) !important;
         -ms-transform: translate(0, 0%) !important;
             transform: translate(0, 0%) !important;
+  }
+
+  .basket-wrap-mb {
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    background: transparent;
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+  }
+
+  ._basket-wrap-mb-active {
+    height: -webkit-max-content !important;
+    height: -moz-max-content !important;
+    height: max-content !important;
+    background: rgba(255, 255, 255, 0.397);
+    -webkit-box-shadow: 0 0 16px rgba(9, 8, 25, 0.1);
+            box-shadow: 0 0 16px rgba(9, 8, 25, 0.1);
+    -webkit-backdrop-filter: blur(53px);
+            backdrop-filter: blur(53px);
   }
 
   .basket__content .basket__block-sum .button__sum-basket:hover {
@@ -9144,43 +9171,27 @@ div:active {
             flex-direction: column;
   }
 
-  .halfs__block-min {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .halfs__block-min-content {
-    max-width: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-    min-width: 100%;
-    padding: 5px 15px;
-  }
-
-@supports (width: clamp( 2.1875rem , 0.9090909091rem  +  5.4545454545vw , 3.125rem )) {
+@supports (width: clamp( 1.5625rem , -0.5681818182rem  +  9.0909090909vw , 3.125rem )) {
     .half__min {
-      width: clamp( 2.1875rem , 0.9090909091rem  +  5.4545454545vw , 3.125rem );
+      width: clamp( 1.5625rem , -0.5681818182rem  +  9.0909090909vw , 3.125rem );
     }
 }
 
-@supports not (width: clamp( 2.1875rem , 0.9090909091rem  +  5.4545454545vw , 3.125rem )) {
+@supports not (width: clamp( 1.5625rem , -0.5681818182rem  +  9.0909090909vw , 3.125rem )) {
     .half__min {
-      width: calc(2.1875rem + 0.9375 * (100vw - 23.4375rem) / 17.1875);
+      width: calc(1.5625rem + 1.5625 * (100vw - 23.4375rem) / 17.1875);
     }
 }
 
-@supports (height: clamp( 4.375rem , 1.8181818182rem  +  10.9090909091vw , 6.25rem )) {
+@supports (height: clamp( 3.125rem , -1.1363636364rem  +  18.1818181818vw , 6.25rem )) {
     .half__min {
-      height: clamp( 4.375rem , 1.8181818182rem  +  10.9090909091vw , 6.25rem );
+      height: clamp( 3.125rem , -1.1363636364rem  +  18.1818181818vw , 6.25rem );
     }
 }
 
-@supports not (height: clamp( 4.375rem , 1.8181818182rem  +  10.9090909091vw , 6.25rem )) {
+@supports not (height: clamp( 3.125rem , -1.1363636364rem  +  18.1818181818vw , 6.25rem )) {
     .half__min {
-      height: calc(4.375rem + 1.875 * (100vw - 23.4375rem) / 17.1875);
+      height: calc(3.125rem + 3.125 * (100vw - 23.4375rem) / 17.1875);
     }
 }
 
