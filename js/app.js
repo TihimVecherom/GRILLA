@@ -4803,6 +4803,20 @@
             el.classList.toggle("_ingredient-active");
         }));
     }));
+    const btnBasket = document.querySelector(".btn-basket");
+    const basketContentMb = document.querySelector(".basket__section-sum");
+    const btnBasketClose = document.querySelector(".close-form-mb");
+    const basketWrapMb = document.querySelector(".basket-wrap-mb");
+    if (btnBasket) btnBasket.addEventListener("click", (function(e) {
+        btnBasket.classList.add("_btn-basket-active");
+        if (basketContentMb) basketContentMb.classList.add("_section-sum-active");
+        if (basketWrapMb) basketWrapMb.classList.add("_basket-wrap-mb-active");
+    }));
+    if (btnBasketClose) btnBasketClose.addEventListener("click", (function(e) {
+        if (basketContentMb) basketContentMb.classList.remove("_section-sum-active");
+        if (btnBasket) btnBasket.classList.remove("_btn-basket-active");
+        if (basketWrapMb) basketWrapMb.classList.remove("_basket-wrap-mb-active");
+    }));
     window["FLS"] = true;
     isWebp();
     addLoadedClass();

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230128164330">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230201142302">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -161,6 +161,7 @@
 					</div>
 				</div>
 				<div class="header__body">
+
 					<div class="header__body-wrap">
 						<div class="header__block-logo">
 							<a class="header__logo" href="#">
@@ -216,11 +217,7 @@
 		</header>
 		<main class="page">
 
-			<div class="basket-mb">
-				<a href="basket.html" class="interaction__link _icon-basket ">
-					<span class="interaction-count">5</span>
-				</a>
-			</div>
+
 
 
 			<div id="up" class="basket">
@@ -339,29 +336,35 @@
 								</div>
 							</div>
 						</div>
-						<div class="basket__block-sum">
-							<div class="basket__block-promo">
-								<form class="form-promocode" action="post">
-									<input class="input-promocode" type="text" placeholder="Промокод ">
-									<button class="button-promocode">Застосувати</button>
-								</form>
-							</div>
-							<div class="basket__block-amount">
+						<!-- добавил basket-wrap-mb -->
+						<div class="basket__block-sum basket-wrap-mb">
 
-								<div class="basket__amount-block-text">
-									<p class="basket__amount-text">Товари</p>
-									<p class="basket__amount-text">2450грн</p>
+							<!-- добавил оболочку basket__section-sum -->
+							<div class="basket__section-sum">
+								<button class="close-form-mb"></button>
+								<div class="basket__block-promo">
+									<form class="form-promocode" action="post">
+										<input class="input-promocode" type="text" placeholder="Промокод ">
+										<button class="button-promocode">Застосувати</button>
+									</form>
 								</div>
-								<div class="basket__amount-block-text">
-									<p class="basket__amount-text">Доставка</p>
-									<p class="basket__amount-text">0 грн/50 грн</p>
-								</div>
-								<div class="basket__amount-block-text">
-									<p class="basket__sum-text">РАЗОМ</p>
-									<p class="basket__sum-text">2500 грн</p>
+								<div class="basket__block-amount">
+
+									<div class="basket__amount-block-text">
+										<p class="basket__amount-text">Товари</p>
+										<p class="basket__amount-text">2450грн</p>
+									</div>
+									<div class="basket__amount-block-text">
+										<p class="basket__amount-text">Доставка</p>
+										<p class="basket__amount-text">0 грн/50 грн</p>
+									</div>
+									<div class="basket__amount-block-text">
+										<p class="basket__sum-text">РАЗОМ</p>
+										<p class="basket__sum-text">2500 грн</p>
+									</div>
 								</div>
 							</div>
-							<button class="button__sum-basket">ОФОРМИТИ</button>
+							<button class="button__sum-basket btn-basket">ОФОРМИТИ</button>
 						</div>
 					</div>
 				</div>
@@ -484,7 +487,7 @@
 
 
 	</div>
-	<script src="js/app.min.js?_v=20230128164330"></script>
+	<script src="js/app.min.js?_v=20230201142302"></script>
 </body>
 
 </html>
