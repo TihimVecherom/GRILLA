@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-	<title>Доставка</title>
+	<title>Сторінка входу</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -217,67 +217,53 @@
 		</header>
 		<main class="page">
 
-			<div class="basket-mb">
-				<a href="basket.html" class="interaction__link _icon-basket ">
-					<span class="interaction-count">5</span>
-				</a>
+
+
+			<div class="login">
+
+				<div class="login__container">
+					<div class="login__section">
+						<div class="login__picture">
+							<img src="img/main/login/1.png" alt="picture">
+						</div>
+						<div class="login__content">
+							<h2 class="login__title title">Вхід за номером телефону</h2>
+							<input class="input-form input-login" type="text" placeholder="+380950000000">
+							<div class="login__block-check">
+								<input class=" booking-input " type="checkbox" name="check" id="check-4">
+								<label class="booking-label" for="check-4">
+									<span class="booking-label__text">Я погоджений з політикою конфіденційності, угодою користувача та даю дозвіл на обробку персональних даних.</span>
+									<span class="booking-label__icon"></span>
+								</label>
+							</div>
+							<a class="login__button" href="#login">Вхід</a>
+						</div>
+					</div>
+				</div>
 			</div>
 
-
-			<div id="up" class="offer">
-				<div class="offer__container">
-					<div class="offer__picture">
-						<img src="img/main/clients/1.png" alt="picture">
-					</div>
-					<div class="offer__content">
-						<h2 class="title-text">Доставка їжі і оплата</h2>
-
-						<ul class="list">
-							<li>Доставка по Кропивницькому</li>
-							<li><a href="tel:+380662220013">+38 (066) 222 00 13</a></li>
-						</ul>
-
-						<ul class="list">
-							<li>Години роботи Доставки: з 11:00 до 21:30</li>
-							<li>Години роботи закладу: з 11:00 до 22:00</li>
-							<li>Середній час доставки - 1 година</li>
-						</ul>
-
-						<ul class="list">
-							<li>У разі ускладнення руху містом, погодних умов, чи сирен - час доставлення може складати більше 1 години.</li>
-						</ul>
-
-						<ul class="list">
-							<li>У разі ускладнення руху містом, погодних умов, чи сирен - час доставлення може складати більше 1 години.</li>
-						</ul>
-
-
-						<ul class="list">
-							<li>Ціна доставки по місту - згідно з цінами перевізника "Містер АМ". Залежить від відстані.</li>
-							<li>Тарифи: можна дізнатися у адміністратора.</li>
-						</ul>
-
-						<ul class="list">
-							<li>Оплата:</li>
-							<li>Оплата на сайті</li>
-							<li>Кур'єру готівкою</li>
-							<li>Переказ на картку ПриватБанку</li>
-						</ul>
-
-
-						<p class="text">Перевірте, будь ласка, адресу доставки, перш ніж замовляти.</p>
-
-
-						<a class="events__button-all _icon-arrow-all" href="#"><span>Детальніше</span></a>
-
-
-
-
-
+			<div id="login" class="popup popup-login">
+				<div class="popup__wrap popup-login-wrap">
+					<a class="popup__area-bg " href="#fix"></a>
+					<div class="popup__container popup-login__container">
+						<div class="popup__content popup-login__content">
+							<div class="popup-login__section">
+								<h2 class="popup-login__title title">Підтвердження</h2>
+								<p class="popup-login__text">На ваш номер телефону відправленно код підтвердження</p>
+								<div class="popup-login__numbers">
+									<input class="input-num" type="text">
+									<input class="input-num" type="text">
+									<input class="input-num" type="text">
+									<input class="input-num" type="text">
+								</div>
+								<button class="popup-login__button">Повторно відправити код</button>
+							</div>
+						</div>
 					</div>
 
 				</div>
 			</div>
+
 
 		</main>
 		<footer class="footer">

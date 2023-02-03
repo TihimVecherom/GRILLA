@@ -1416,7 +1416,7 @@ div:active {
 .product__picture {
   position: relative;
   padding-top: 95%;
-  width: 95%;
+  min-width: 95%;
   margin: 0 auto;
   margin-bottom: 15px;
   -webkit-transition: 0.2s;
@@ -6285,6 +6285,7 @@ div:active {
   left: 0;
   background-color: #fff;
   border-top: 0;
+  overflow: hidden;
   padding: 0px 0px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -6328,18 +6329,6 @@ div:active {
 
 .ordering__block-select .select._select-open {
   z-index: 5;
-}
-
-.ordering__block-select .select__options .select__option:not(:last-child) {
-  border-bottom: 1px solid #868686;
-}
-
-.ordering__block-select .select__options .select__option:nth-child(2) {
-  border-radius: 40px 40px 0 0;
-}
-
-.ordering__block-select .select__options .select__option:last-child {
-  border-radius: 0 0 40px 40px;
 }
 
 ._select-tag {
@@ -6439,6 +6428,7 @@ div:active {
 
 .input-datapicket {
   width: 100%;
+  cursor: text;
 }
 
 .booking__block-input {
@@ -6477,7 +6467,7 @@ div:active {
 }
 
 .booking-input:checked + .booking-label .booking-label__icon {
-  background: #D9D9D9 url("../img/icon/check.svg") center center no-repeat;
+  background: white url("../img/icon/check.svg") center center no-repeat;
   background-size: contain;
 }
 
@@ -6501,9 +6491,9 @@ div:active {
 }
 
 .booking-label__icon {
-  width: 20px;
+  min-width: 20px;
   height: 20px;
-  background: #D9D9D9;
+  background: #ffffff;
   border: 1px solid #000000;
 }
 
@@ -6563,9 +6553,9 @@ div:active {
 }
 
 .booking__quantity-button-plus:hover {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .booking__quantity-button-plus:active {
@@ -6586,9 +6576,9 @@ div:active {
 }
 
 .booking__quantity-button-minus:hover {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .booking__quantity-button-minus:active {
@@ -6683,6 +6673,205 @@ div:active {
 
 .booking {
   padding-top: 50px;
+}
+
+.login {
+  padding-top: 20px;
+}
+
+.login__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 100px;
+  padding: 50px;
+  background: var(--bg-card);
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 16px rgba(9, 8, 25, 0.1);
+          box-shadow: 0 0 16px rgba(9, 8, 25, 0.1);
+}
+
+.login__picture {
+  position: relative;
+  padding-top: 35%;
+  min-width: 35%;
+}
+
+.login__picture img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.login__title {
+  margin-bottom: 30px !important;
+  max-width: 370px;
+}
+
+.input-login {
+  margin-bottom: 30px;
+  min-width: 375px;
+  border: 1px solid #868686;
+  background: transparent;
+  color: var(--text-color);
+}
+
+.input-login:focus::-webkit-input-placeholder {
+  color: var(--text-color);
+}
+
+.input-login:focus::-moz-placeholder {
+  color: var(--text-color);
+}
+
+.input-login:focus:-ms-input-placeholder {
+  color: var(--text-color);
+}
+
+.input-login:focus::-ms-input-placeholder {
+  color: var(--text-color);
+}
+
+.input-login:focus::placeholder {
+  color: var(--text-color);
+}
+
+.login__block-check {
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.login__block-check .booking-label {
+  font-size: 16px;
+  line-height: 19px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 10px;
+}
+
+.login__button {
+  padding: 12px 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  max-width: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #FFD600;
+  border-radius: 50px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  color: #000000;
+}
+
+.login__button:hover {
+  background: #9600FF;
+  color: white;
+}
+
+.popup-login__container {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.popup-login-wrap {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.popup-login__content {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  padding-top: 15%;
+}
+
+.popup-login__section {
+  position: relative;
+  z-index: 2;
+  padding: 50px;
+  border-radius: 30px;
+  background: var(--bg-card);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.popup-login__title {
+  margin-bottom: 20px !important;
+  text-align: center;
+}
+
+.popup-login__text {
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.popup-login__numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input-num {
+  background: #FFFFFF;
+  border-radius: 8px;
+  width: 50px;
+  height: 60px;
+  font-size: 33px;
+  line-height: 40px;
+  color: #000000;
+  text-align: center;
+  padding: 0 5px;
+  border: 1px solid rgba(141, 140, 140, 0.63);
+}
+
+.input-num:focus {
+  outline: none;
+}
+
+.popup-login__button {
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  text-decoration: underline;
+  margin: 0 auto;
+  display: block;
 }
 
 .header {
@@ -8065,6 +8254,16 @@ div:active {
   .map-adress {
     min-width: 100%;
   }
+
+  .login__section {
+    gap: 50px;
+  }
+
+  .login__title {
+    max-width: none;
+    font-size: 35px;
+    line-height: 43px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -8397,6 +8596,14 @@ div:active {
 
   .ordering__block-select .select__options {
     min-width: 100%;
+  }
+
+  .login__section {
+    padding: 30px;
+  }
+
+  .popup-login__content {
+    padding-top: 30%;
   }
 
   .footer {
@@ -9048,6 +9255,52 @@ div:active {
     padding-top: 20px;
   }
 
+  .login__section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .login__picture {
+    padding-top: 55%;
+    min-width: 55%;
+  }
+
+  .login__title {
+    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 20px !important;
+  }
+
+  .input-login {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .login__block-check .booking-label {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .login__button {
+    max-width: 100%;
+  }
+
+  .popup-login__section {
+    padding: 30px 25px;
+  }
+
+  .input-num {
+    width: 35px;
+    height: 45px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+
   .header__top-content {
     gap: 15px;
   }
@@ -9339,6 +9592,12 @@ div:active {
   }
 }
 
+@media (max-width: 650.98px) {
+  .popup-login__content {
+    padding-top: 50%;
+  }
+}
+
 @media (max-width: 600px) {
   .orders-tabs__items {
     -ms-grid-columns: 1fr;
@@ -9588,6 +9847,13 @@ div:active {
   .header__block-info {
     font-size: 12px;
     line-height: 14px;
+  }
+}
+
+@media (max-width: 400.98px) {
+  .login__title {
+    font-size: 26px;
+    line-height: 30px;
   }
 }
 
