@@ -4665,8 +4665,11 @@ div:active {
 }
 
 .halfs__cards {
+  display: -ms-grid;
+  display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr !important;
+  gap: 20px;
 }
 
 .card-halfs-product .product__picture {
