@@ -4735,17 +4735,6 @@
             el.classList.toggle("add-favorites-active");
         }));
     }));
-    function onEntry(entry) {
-        entry.forEach((change => {
-            if (change.isIntersecting) change.target.classList.add("el-show");
-        }));
-    }
-    let options = {
-        threshold: [ .5 ]
-    };
-    let observer = new IntersectionObserver(onEntry, options);
-    let script_elements = document.querySelectorAll(".el-anim");
-    for (let elm of script_elements) observer.observe(elm);
     const ingridient = document.querySelectorAll(".ingredient");
     ingridient.forEach((el => {
         el.addEventListener("click", (() => {
