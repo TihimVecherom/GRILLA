@@ -2690,11 +2690,7 @@ div:active {
   overflow: visible !important;
 }
 
-.swiper-popular__wrapper .swiper-slide {
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-}
+
 
 .popular-card {
   background: var(--bg-card);
